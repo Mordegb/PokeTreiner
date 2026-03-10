@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login{
+  margin-bottom: 100px;
+  font-size: 70px;
+}
+
+
+.container {
+  display: flex;
+  min-height: 100vh; /* Faz o container ocupar 100% da altura da tela */
+  width: 100%;
+}
+
+.rigth-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-side {
+  flex: 1; /* Faz esse lado ocupar a outra metade da largura */
+  background: #3c3c3c; /* Sua cor escura */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forgot-link {
+  // margin: -15px 0 15px;
+}
+
+.forgot-link a {
+  font-size: 14.5px;
+  color: #333;
+  &:hover {
+    color: blue;
+  }
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  margin: 30px auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.bnt {
+  width: 100%;
+  height: 48px;
+  background: #7494ec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  margin: 30px auto;
+  &:hover {
+    background: #6380ce;
+  }
+}
+
+.InputTrue {
+  transform: translateY(-30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  
+
+
+  input {
+    width: 100%;
+    padding: 16px; 
+    font-size: 16px; 
+    border-radius: 8px;
+    border: solid black 1px;
+    outline: none;
+    border: solid black 1px;
+  }
+  img{
+    position:relative;
+    transform: translateX(-34px);
+  }
+}
