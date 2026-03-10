@@ -24,15 +24,15 @@
 }
 
 .left-side {
-  flex: 1; /* Faz esse lado ocupar a outra metade da largura */
-  background: #3c3c3c; /* Sua cor escura */
+  flex: 1; 
+  background: #3c3c3c; 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .forgot-link {
-  // margin: -15px 0 15px;
+  margin: -18px 0 15px;
 }
 
 .forgot-link a {
@@ -52,6 +52,7 @@ form {
   margin-left: auto;
   width: 100%;
   max-width: 500px;
+  transform: translateY(-20px);
 }
 
 .bnt {
@@ -73,41 +74,46 @@ form {
 
 .InputTrue {
   position: relative;
-  transform: translateY(-30px);
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 40px;
-
-  label {
-    position: absolute;
-    font-size: 20px;
-    left: 7px;
-    top: -21px;
-    color: #08001c;
-  }
+  margin-bottom: 30px;
 
   input {
     width: 100%;
     padding: 16px;
     font-size: 16px;
     border-radius: 8px;
-    border: solid black 1px;
+    border: 1px solid black;
     outline: none;
-    border: solid black 1px;
+    background: transparent;
 
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(-33px); 
+      background-color: white; 
+      padding: 0 4px;
+      color: #6185e6;
+      left: 10px; 
+    }
+
+    &:focus {
+      // border-color: #7494ec;
+    }
   }
+
+  label {
+    position: absolute;
+    left: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease; 
+    z-index: 2;
+  }
+
   img {
-    position: relative;
-    transform: translateX(-34px);
+    position: absolute;
+    right: 16px;
+    width: 20px;
   }
 }
-// &:focus {
-//       label {
-//         transition: 0.2s;
-//         transform: translateX(-10px);
-//         transform: translateY(20px);
-//       }
-//       border-color: #6380ce;
-//     }
