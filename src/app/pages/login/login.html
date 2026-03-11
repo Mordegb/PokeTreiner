@@ -3,22 +3,25 @@
     <div class="left-side"></div>
     <div class="rigth-side">
       <form>
-        <h1 class="login">login</h1>
-
+        <div class="login">
+          <img src="PokeLogin.png" (click)="HowIsThatPokemon()" />
+        </div>
         <div class="InputTrue">
           <input type="email" placeholder=" " />
           <label>Email</label>
-          <img src="envelope.svg" class="bx bxs-email" />
+          <img src="envelope.svg" class="inputImg" />
         </div>
 
         <div class="InputTrue">
-          <input type="password" placeholder=" " />
+          <input [type]="InputPassword" placeholder=" " />
           <label>Senha</label>
-          <img src="car-key.svg" class="bx bxs-key-alt" />
+          <img src="car-key.svg" class="inputImg" />
         </div>
 
         <div class="forgot-link">
-          <a href="#">Don't remember my password</a>
+          <input type="checkbox" name="Showpassword" (click)="ShowPassword()" />
+          <label for="Showpassword"> Show Password</label>
+          <a href="#">Forgot the password! </a>
         </div>
         <button type="submit" class="bnt">Login</button>
       </form>

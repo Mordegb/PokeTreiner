@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +7,7 @@
 }
 
 .login {
-  margin-bottom: 100px;
-  font-size: 70px;
+  margin-bottom: 50px;
 }
 
 .container {
@@ -21,26 +21,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
 }
 
 .left-side {
-  flex: 1; 
-  background: #3c3c3c; 
+  flex: 1;
+  background: #3c3c3c;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.forgot-link {
-  margin: -18px 0 15px;
-}
-
-.forgot-link a {
-  font-size: 14.5px;
-  color: #333;
-  &:hover {
-    color: blue;
-  }
 }
 
 form {
@@ -48,28 +37,9 @@ form {
   flex-direction: column;
   text-align: center;
   position: relative;
-  margin: 30px auto;
-  margin-left: auto;
   width: 100%;
   max-width: 500px;
   transform: translateY(-20px);
-}
-
-.bnt {
-  width: 100%;
-  height: 48px;
-  background: #7494ec;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  color: #fff;
-  font-weight: 500;
-  margin: 30px auto;
-  &:hover {
-    background: #6380ce;
-  }
 }
 
 .InputTrue {
@@ -77,7 +47,7 @@ form {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 
   input {
     width: 100%;
@@ -90,15 +60,12 @@ form {
 
     &:focus + label,
     &:not(:placeholder-shown) + label {
-      transform: translateY(-33px); 
-      background-color: white; 
+      transform: translateY(-35px);
+      font-size: 22px;
+      background-color: white;
       padding: 0 4px;
       color: #6185e6;
-      left: 10px; 
-    }
-
-    &:focus {
-      // border-color: #7494ec;
+      left: 10px;
     }
   }
 
@@ -107,13 +74,46 @@ form {
     left: 16px;
     color: #999;
     pointer-events: none;
-    transition: all 0.2s ease; 
+    transition: all 0.2s ease;
     z-index: 2;
   }
 
-  img {
+  .inputImg {
     position: absolute;
     right: 16px;
     width: 20px;
+  }
+}
+
+.bnt {
+  width: 70%;
+  height: 54px;
+  background: #7494ec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin: 30px auto;
+  &:hover {
+    background: #6380ce;
+  }
+}
+
+.forgot-link {
+  margin: -22px 0 15px;
+  a {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #333;
+    &:hover {
+      color: blue;
+    }
+    margin-left: 220px;
+  }
+  input{
+    transform: scale(1.5);
   }
 }
