@@ -59,7 +59,7 @@ export class Login {
     }
     else{
       this.LoginForm.reset
-      console.log('nun deu bom')
+      console.log('Login invalido')
     }
   }
 }
