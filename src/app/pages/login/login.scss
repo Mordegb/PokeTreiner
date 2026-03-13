@@ -8,6 +8,14 @@
 
 .login {
   margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .container {
@@ -112,7 +120,6 @@ form {
       padding: 0 4px;
       color: #6185e6;
       left: 10px;
-
     }
     // &:focus {
     //   border: 1px solid black;
@@ -167,18 +174,29 @@ form {
   opacity: 0.4;
 }
 
+
+
+
 .forgot-link {
-  margin: -22px 0 15px;
+  margin: -25px 2px 15px 8px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  label {
+    position: absolute;
+    transform: translateX(20px);
+  }
   a {
     font-size: 14.5px;
     font-weight: 500;
     color: #333;
+    margin-left: 0;
     &:hover {
       color: blue;
     }
-    margin-left: 220px;
   }
   input {
-    transform: scale(1.5);
+    transform: scale(1.6);
   }
 }
