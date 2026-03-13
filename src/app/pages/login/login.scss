@@ -67,6 +67,8 @@ form {
       color: #6185e6;
       left: 10px;
     }
+    // &:focus {
+    // }
   }
 
   label {
@@ -85,7 +87,55 @@ form {
   }
 }
 
-.bnt {
+.InputFalse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+
+  input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ee2535;
+    transition: 0.2s;
+    outline: none;
+    background: transparent;
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(-35px);
+      font-size: 22px;
+      background-color: white;
+      padding: 0 4px;
+      color: #6185e6;
+      left: 10px;
+
+    }
+    // &:focus {
+    //   border: 1px solid black;
+    // }
+  }
+
+  label {
+    position: absolute;
+    left: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 2;
+  }
+
+  .inputImg {
+    position: absolute;
+    right: 16px;
+    width: 20px;
+  }
+}
+
+.bntTrue {
   width: 70%;
   height: 54px;
   background: #7494ec;
@@ -102,6 +152,21 @@ form {
   }
 }
 
+.bntFalse {
+  width: 70%;
+  height: 54px;
+  background: #7494ec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin: 30px auto;
+  opacity: 0.4;
+}
+
 .forgot-link {
   margin: -22px 0 15px;
   a {
@@ -113,7 +178,7 @@ form {
     }
     margin-left: 220px;
   }
-  input{
+  input {
     transform: scale(1.5);
   }
 }

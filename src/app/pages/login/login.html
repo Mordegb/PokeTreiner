@@ -2,28 +2,37 @@
   <div class="container">
     <div class="left-side"></div>
     <div class="rigth-side">
-      <form>
+      <form [formGroup]="LoginForm" (ngSubmit)="BuscarUsuario()">
         <div class="login">
-          <img src="PokeLogin.png" (click)="HowIsThatPokemon()" />
+          <!-- ajustar responsividade -->
+          <!-- <img src="PokeLogin5.png" style="border: solid red;" (click)="HowIsThatPokemon()" /> -->
+          <img src="PokeLogin5.png" (click)="HowIsThatPokemon()" />
         </div>
-        <div class="InputTrue">
-          <input type="email" placeholder=" " />
+        <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse' ">
+          <input type="email" placeholder=" " formControlName="UserEmail"  (input)="limparErro()" />
           <label>Email</label>
           <img src="envelope.svg" class="inputImg" />
         </div>
 
-        <div class="InputTrue">
-          <input [type]="InputPassword" placeholder=" " />
+        <div [className]="loginSuceful  ? 'InputTrue' : 'InputFalse'" >
+          <input [type]="InputPassword" placeholder=" " formControlName="UserPassword" />
           <label>Senha</label>
           <img src="car-key.svg" class="inputImg" />
         </div>
 
         <div class="forgot-link">
+          <!-- ajustar responsividade -->
           <input type="checkbox" name="Showpassword" (click)="ShowPassword()" />
           <label for="Showpassword"> Show Password</label>
           <a href="#">Forgot the password! </a>
         </div>
-        <button type="submit" class="bnt">Login</button>
+        <button
+          type="submit"
+          [className]="LoginForm.valid ? 'bntTrue' : 'bntFalse'"
+          [disabled]="LoginForm.invalid"
+        >
+          Login
+        </button>
       </form>
     </div>
   </div>
