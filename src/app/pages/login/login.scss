@@ -1,0 +1,208 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login {
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #242424;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .segredo{
+    display: block;
+    transform: translateX(-118px);
+  }
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.rigth-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.left-side {
+  flex: 1;
+  background: #3c3c3c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  transform: translateY(-20px);
+}
+
+.InputTrue {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+
+  input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid black;
+    outline: none;
+    background: transparent;
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(-35px);
+      font-size: 22px;
+      background-color: white;
+      padding: 0 4px;
+      color: #6185e6;
+      left: 10px;
+    }
+    &:focus {
+      transition: .2s;
+      border-color: #7c95d8;
+    }
+  }
+
+  label {
+    position: absolute;
+    left: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 2;
+  }
+
+  .inputImg {
+    position: absolute;
+    right: 16px;
+    width: 25px;
+  }
+}
+
+.InputFalse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+
+  input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ef0b4b;
+    transition: 0.2s;
+    outline: none;
+    background: transparent;
+
+    &:focus + label,
+    &:not(:placeholder-shown) + label {
+      transform: translateY(-35px);
+      font-size: 22px;
+      background-color: white;
+      padding: 0 4px;
+      color: #ef0b4b;
+      left: 10px;
+    }
+
+  }
+
+  label {
+    position: absolute;
+    left: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 2;
+  }
+
+  .inputImg {
+    position: absolute;
+    right: 16px;
+    width: 20px;
+  }
+}
+
+.bntTrue {
+  width: 70%;
+  height: 54px;
+  background: #7494ec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin: 30px auto;
+  &:hover {
+    background: #6380ce;
+  }
+}
+
+.bntFalse {
+  width: 70%;
+  height: 54px;
+  background: #7494ec;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  margin: 30px auto;
+  opacity: 0.4;
+}
+
+
+
+
+.forgot-link {
+  margin: -25px 2px 15px 8px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  label {
+    position: absolute;
+    transform: translateX(20px);
+  }
+  a {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 0;
+    &:hover {
+      color: blue;
+    }
+  }
+  input {
+    transform: scale(1.6);
+  }
+}
