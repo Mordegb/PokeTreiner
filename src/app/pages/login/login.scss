@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +12,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  color: #242424;
   img {
     max-width: 100%;
     height: auto;
     display: block;
+  }
+  .segredo{
+    display: block;
+    transform: translateX(-118px);
   }
 }
 
@@ -75,8 +81,10 @@ form {
       color: #6185e6;
       left: 10px;
     }
-    // &:focus {
-    // }
+    &:focus {
+      transition: .2s;
+      border-color: #7c95d8;
+    }
   }
 
   label {
@@ -91,7 +99,7 @@ form {
   .inputImg {
     position: absolute;
     right: 16px;
-    width: 20px;
+    width: 25px;
   }
 }
 
@@ -107,7 +115,7 @@ form {
     padding: 16px;
     font-size: 16px;
     border-radius: 8px;
-    border: 2px solid #ee2535;
+    border: 2px solid #ef0b4b;
     transition: 0.2s;
     outline: none;
     background: transparent;
@@ -118,12 +126,10 @@ form {
       font-size: 22px;
       background-color: white;
       padding: 0 4px;
-      color: #6185e6;
+      color: #ef0b4b;
       left: 10px;
     }
-    // &:focus {
-    //   border: 1px solid black;
-    // }
+
   }
 
   label {

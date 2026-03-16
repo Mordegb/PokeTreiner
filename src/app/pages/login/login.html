@@ -4,24 +4,22 @@
     <div class="rigth-side">
       <form [formGroup]="LoginForm" (ngSubmit)="BuscarUsuario()">
         <div class="login">
-          <!-- ajustar responsividade -->
-          <!-- <img src="PokeLogin5.png" style="border: solid red;" (click)="HowIsThatPokemon()" /> -->
-          <img src="PokeLogin5.png" (click)="HowIsThatPokemon()" />
+          <img src="PokeLogin.png"/>
+           <h2 (click)="HowIsThatPokemon()" class="segredo" >o</h2>
         </div>
-        <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse' ">
-          <input type="email" placeholder=" " formControlName="UserEmail"  (input)="limparErro()" />
+        <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
+          <input type="email" placeholder=" " formControlName="UserEmail" (input)="limparErro()" />
           <label>Email</label>
           <img src="envelope.svg" class="inputImg" />
         </div>
 
-        <div [className]="loginSuceful  ? 'InputTrue' : 'InputFalse'" >
+        <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
           <input [type]="InputPassword" placeholder=" " formControlName="UserPassword" />
           <label>Senha</label>
           <img src="car-key.svg" class="inputImg" />
         </div>
 
         <div class="forgot-link">
-          <!-- ajustar responsividade -->
           <input type="checkbox" name="Showpassword" (click)="ShowPassword()" />
           <label for="Showpassword"> Show Password</label>
           <a href="#">Forgot the password! </a>
