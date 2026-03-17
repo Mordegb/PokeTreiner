@@ -67,4 +67,8 @@ export class Login {
       this.loginSuceful = true;
     }
   }
+
+  IrCriar(){
+    this.router.navigate(['register'])
+  }
 }
