@@ -1,11 +1,38 @@
 <body>
   <div class="container">
     <div class="left-side">
-       <form>
-        
+      <form>
+        <div class="Msg-initial">
+          <img src="Registrar.png" />
+        </div>
+        <div class="InputTrue">
+          <input type="email" placeholder=" " />
+          <label>Email</label>
+          <img src="envelope.svg" class="inputImg" />
+        </div>
+
+        <div class="InputTrue">
+          <input type="password" placeholder=" " />
+          <label>Senha</label>
+          <img src="lock.svg" class="inputImg" />
+        </div>
+        <div class="InputTrue">
+          <input type="text" placeholder=" " />
+          <label>UserName</label>
+          <img src="userIcon.svg" class="inputImg" />
+        </div>
+          <button
+          type="submit"
+          class="bntTrue"
+        >
+          Login
+        </button>
       </form>
     </div>
     <div class="right-side">
+      <button (click)="IrParaLogin()" >
+        Login
+      </button>
     </div>
   </div>
 </body>
