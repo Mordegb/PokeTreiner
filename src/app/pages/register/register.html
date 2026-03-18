@@ -1,25 +1,25 @@
 <body>
   <div class="container">
     <div class="left-side">
-      <form [formGroup]="RegisterForm" (ngSubmit)="CriarConta()" >
+      <form [formGroup]="RegisterForm" (ngSubmit)="teste()" >
         <div class="Msg-initial">
           <img src="Registrar.png" />
         </div>
 
         <div class="InputTrue">
-          <input type="text" placeholder=" " formControlName="name" />
+          <input type="text" placeholder=" " formControlName="UserName" />
           <label>UserName</label>
           <img src="userIcon.svg" class="inputImg"   />
         </div>
 
         <div class="InputTrue">
-          <input type="email" placeholder=" "  formControlName="email"/>
+          <input type="email" placeholder=" "  formControlName="UserEmail"/>
           <label>Email</label>
           <img src="envelope.svg" class="inputImg" />
         </div>
 
         <div class="InputTrue">
-          <input type="password" placeholder=" "  formControlName="password" />
+          <input type="password" placeholder=" "  formControlName="UserPassword" />
           <label>Senha</label>
           <img src="lock.svg" class="inputImg" />
         </div>

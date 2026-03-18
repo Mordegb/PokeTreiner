@@ -13,7 +13,7 @@ import { error } from 'console';
 
 @Component({
   selector: 'app-register',
-  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule],
+  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule,FormsModule],
   templateUrl: './register.html',
   styleUrl: './register.scss',
 })
@@ -22,13 +22,13 @@ export class Register {
   private userService = inject(UserService);
 
   RegisterForm = new FormGroup({
-      name: new FormControl('', [
+      UserName: new FormControl('', [
       Validators.required,
       Validators.minLength(5),
       Validators.maxLength(25),
     ]),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    UserEmail: new FormControl('', Validators.required),
+    UserPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
   
   });
 
@@ -44,18 +44,21 @@ export class Register {
     if (this.RegisterForm.invalid) {
       return;
     }
-    const Email = this.RegisterForm.value.email ?? '';
-    const Senha = this.RegisterForm.value.password ?? '';
-    const Name = this.RegisterForm.value.name ?? '';
+    const email = this.RegisterForm.value.UserEmail ?? '';
+    const senha = this.RegisterForm.value.UserPassword ?? '';
+    const name = this.RegisterForm.value.UserName ?? '';
 
-    this.userService.CriarConta(Name,Email, Senha).subscribe({
+    this.userService.CriarConta(name,email, senha).subscribe({
       next: (response) => {
         if (response.error === false) {
-          console.log('usuario criado manda o dan conferir');
+          console.log('usuario criado, manda o dan conferir');
+          //navigate pro login
+          //mensagem de que criar a conta deu certo
         }
       },
       error: (error) => {
         console.log('não funcionou e não criou');
+        //mensagem com o motivo de dar erado
       },
     });
   }
