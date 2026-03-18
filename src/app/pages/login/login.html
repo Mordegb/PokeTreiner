@@ -16,7 +16,7 @@
         </div>
 
         <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
-          <input [type]="InputPassword" placeholder=" " formControlName="UserPassword" />
+          <input [type]="InputPassword" placeholder=" " formControlName="UserPassword" (input)="limparErro()" />
           <label>Senha</label>
           <img src="car-key.svg" class="inputImg" />
         </div>
