@@ -18,7 +18,7 @@
     height: auto;
     display: block;
   }
-  .segredo{
+  .segredo {
     display: block;
     transform: translateX(-123px);
     cursor: pointer;
@@ -83,7 +83,7 @@ form {
       left: 10px;
     }
     &:focus {
-      transition: .2s;
+      transition: 0.2s;
       border-color: #7c95d8;
     }
   }
@@ -130,7 +130,6 @@ form {
       color: #ef0b4b;
       left: 10px;
     }
-
   }
 
   label {
@@ -181,13 +180,10 @@ form {
   opacity: 0.4;
 }
 
-
-
-
 .forgot-link {
   margin: -25px 2px 15px 8px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   label {

@@ -21,20 +21,22 @@ export interface ApiResponse {
 export class UserService {
   private _http = inject(HttpClient);
 
-  CriarConta( name:string, email: string, password: string): Observable<ApiResponse> {
-    return this._http.post<ApiResponse>(
-      `${environment.api}user/`,
-      { name ,email , password },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      }
-    ).pipe(
-      catchError((error)=>{
-        return throwError(()=>error)
-      })
-    );
+  CriarConta(name: string, email: string, password: string): Observable<ApiResponse> {
+    return this._http
+      .post<ApiResponse>(
+        `${environment.api}user/register`,
+        { name, email, password },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+        },
+      )
+      .pipe(
+        catchError((error) => {
+          return throwError(() => error);
+        }),
+      );
   }
 }
