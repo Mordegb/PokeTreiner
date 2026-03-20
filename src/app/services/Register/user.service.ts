@@ -29,7 +29,7 @@ export class UserService {
         {
           headers: {
             'Content-Type': 'application/json',
-            Accept: 'application/json',
+           'Accept': 'application/json',
           },
         },
       )
