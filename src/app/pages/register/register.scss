@@ -7,31 +7,35 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.login {
-  margin-bottom: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  color: #242424;
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .segredo {
-    display: block;
-    transform: translateX(-123px);
-    cursor: pointer;
-  }
-}
-
 .container {
   display: flex;
   min-height: 100vh;
   width: 100%;
 }
 
-.rigth-side {
+.Msg-initial{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #242424;
+  transform: translateY(-64px);
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  background: #3c3c3c;
+}
+
+.left-side {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -39,22 +43,16 @@
   padding: 0 20px;
 }
 
-.left-side {
-  flex: 1;
-  background: #3c3c3c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 form {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  transform: translateY(-20px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-20px);
 }
 
 .InputTrue {
@@ -62,7 +60,8 @@ form {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
+
 
   input {
     width: 100%;
@@ -109,7 +108,11 @@ form {
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
+  // margin-left: auto;
+  // margin-right: auto;
+
+  
 
   input {
     width: 100%;
@@ -156,10 +159,11 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 22px;
   color: #fff;
-  font-weight: 500;
-  margin: 30px auto;
+  font-weight: 600;
+  margin: 20px auto;
+  margin-bottom: -24px;
   &:hover {
     background: #6380ce;
   }
@@ -180,26 +184,4 @@ form {
   opacity: 0.4;
 }
 
-.forgot-link {
-  margin: -25px 2px 15px 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  label {
-    position: absolute;
-    transform: translateX(20px);
-  }
-  a {
-    font-size: 14.5px;
-    font-weight: 500;
-    color: #333;
-    margin-left: 0;
-    &:hover {
-      color: blue;
-    }
-  }
-  input {
-    transform: scale(1.6);
-  }
-}
+

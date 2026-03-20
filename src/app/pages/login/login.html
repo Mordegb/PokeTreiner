@@ -1,11 +1,13 @@
 <body>
   <div class="container">
-    <div class="left-side"></div>
+    <div class="left-side">
+      <button (click)="IrCriar()">Registar</button>
+    </div>
     <div class="rigth-side">
       <form [formGroup]="LoginForm" (ngSubmit)="BuscarUsuario()">
         <div class="login">
-          <img src="PokeLogin.png"/>
-           <h2 (click)="HowIsThatPokemon()" class="segredo" >o</h2>
+          <img src="PokeLogin.png" />
+          <h2 (click)="HowIsThatPokemon()" class="segredo">O</h2>
         </div>
         <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
           <input type="email" placeholder=" " formControlName="UserEmail" (input)="limparErro()" />
@@ -14,7 +16,12 @@
         </div>
 
         <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
-          <input [type]="InputPassword" placeholder=" " formControlName="UserPassword" />
+          <input
+            [type]="InputPassword"
+            placeholder=" "
+            formControlName="UserPassword"
+            (input)="limparErro()"
+          />
           <label>Senha</label>
           <img src="car-key.svg" class="inputImg" />
         </div>
