@@ -25,7 +25,7 @@ export class UserService {
     return this._http
       .post<ApiResponse>(
         `${environment.api}user/register`,
-        { name, email, password },
+        { name, email, password }, //isso aq envia em formato json
         {
           headers: {
             'Content-Type': 'application/json',
