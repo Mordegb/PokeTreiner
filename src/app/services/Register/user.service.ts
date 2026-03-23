@@ -24,12 +24,12 @@ export class UserService {
   CriarConta(name: string, email: string, password: string): Observable<ApiResponse> {
     return this._http
       .post<ApiResponse>(
-        `${environment.api}user/register`,
-        { name, email, password },
+        `${environment.api}/user/register`,
+        { name, email, password }, //isso aq envia em formato json
         {
           headers: {
             'Content-Type': 'application/json',
-            Accept: 'application/json',
+           'Accept': 'application/json',
           },
         },
       )
