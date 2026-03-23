@@ -62,6 +62,6 @@ export class Login {
   }
 
   IrCriar() {
-    this.router.navigate(['register']);
+    this.router.navigate(['/register']);
   }
 }

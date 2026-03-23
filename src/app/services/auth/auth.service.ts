@@ -35,7 +35,7 @@ export class AuthService {
       .set('grant_type', 'password');
 
     return this.http
-      .post<ApiResponse>(`${environment.api}auth/login/`, body, {
+      .post<ApiResponse>(`${environment.api}/auth/login/`, body, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
           Accept: 'application/json',

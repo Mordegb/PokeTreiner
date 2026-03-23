@@ -64,6 +64,6 @@ export class Register {
   }
 
   IrParaLogin() {
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 }
