@@ -27,8 +27,8 @@ export class Register {
       Validators.minLength(4),
       Validators.maxLength(25),
     ]),
-    UserEmail: new FormControl('', [Validators.required, Validators.email]),
-    UserPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    UserEmail: new FormControl('', [Validators.required, Validators.email , Validators.maxLength(320)]),
+    UserPassword: new FormControl('', [Validators.required, Validators.minLength(4) , Validators.maxLength(25)]),
   });
 
   teste() {
@@ -56,7 +56,7 @@ export class Register {
         }
       },
       error: (error: HttpErrorResponse) => {
-        console.error('erro no logi:',error)
+        console.error('Erro ao criar usuario:',error)
         if (error.status === 400) {
           console.log('esse email ja esta sendo usado.');
         }
