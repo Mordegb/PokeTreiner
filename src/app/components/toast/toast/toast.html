@@ -2,15 +2,17 @@
   <div
     class="toast"
     [ngClass]="[toast.type, toast.position]"
-    [style.--duracao]="toast.timeOut + 'ms'"
     (mouseenter)="onMouseEnter()"
-    (mouseleave)="onMouseLeave(toast.timeOut)"
+    (mouseleave)="onMouseLeave()"
+    (click)="onClick()"
   >
     <span>{{ toast.message }}</span>
     <div class="progress">
-      @if (!reiniciando) {
-        <div class="progress-bar"></div>
-      }
+      <div
+        class="progress-bar"
+        [style.--duracao]="toast.timeOut + 'ms'"
+        [style.animation-play-state]="pausado ? 'paused' : 'running'"
+      ></div>
     </div>
   </div>
 }

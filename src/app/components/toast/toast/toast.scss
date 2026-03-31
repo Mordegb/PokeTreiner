@@ -2,11 +2,14 @@
   position: fixed;
   color: white;
   padding: 12px 16px;
-  border-radius: 10px;
-  font-size: 25px;
+  border-radius: 3px;
+  font-size: 22px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  cursor: pointer;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-weight: 500;
   z-index: 9999;
 
   &.erro {
@@ -22,12 +25,12 @@
   &.superior-direito {
     top: 20px;
     right: 20px;
-    animation: slideEsquerda 0.3s ease-out;
+    animation: slideEsquerda 0.3s ease-in-out;
   }
   &.inferior-direito {
     bottom: 20px;
     right: 20px;
-    animation: slideEsquerda 0.3s ease-out;
+    animation: slideEsquerda 0.3s ease-in-out;
   }
 }
 

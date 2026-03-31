@@ -10,14 +10,20 @@ export interface IToast {
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {
-  private toast = new BehaviorSubject<IToast | null>(null);
+  readonly toast = new BehaviorSubject<IToast | null>(null);
   toast$ = this.toast.asObservable();
-  private timer: any; 
 
-    private mostrar(message: string, type: IToast['type'], position: IToast['position'], timeOut: number) {
-    clearTimeout(this.timer);
+  private mostrar(
+    message: string,
+    type: IToast['type'],
+    position: IToast['position'],
+    timeOut: number,
+  ) {
     this.toast.next({ message, type, position, timeOut });
-    this.timer = setTimeout(() => this.toast.next(null), timeOut);
+  }
+
+  fechar() {
+    this.toast.next(null);
   }
 
   mostrarErro(msg: string, position: IToast['position'] = 'inferior-direito', timeOut = 3000) {
@@ -30,10 +36,5 @@ export class ToastService {
 
   mostrarAlerta(msg: string, position: IToast['position'] = 'inferior-direito', timeOut = 3000) {
     this.mostrar(msg, 'alerta', position, timeOut);
-  }
-
-  fechar() {
-    this.toast.next(null);
-    clearTimeout(this.timer)
   }
 }

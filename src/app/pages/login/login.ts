@@ -46,14 +46,13 @@ export class Login {
       next: (response) => {
         if (response.access_token) {
           this.service.storeSession(response);
-          // alert('login realizado com sucesso');
-          this.toast.mostrarSucesso('DEU BOM PORRA' , )
+          this.toast.mostrarSucesso('deu bom.', 'superior-direito', 1000);
           this.loginSuceful = true;
         }
       },
       error: (error) => {
         console.error('Erro no login:', error);
-        this.toast.mostrarErro('mensagem funcional' , 'inferior-direito',5200)
+        this.toast.mostrarErro('não foi possivel efetuar o login', 'superior-direito', 3500);
         this.loginSuceful = false;
       },
     });
