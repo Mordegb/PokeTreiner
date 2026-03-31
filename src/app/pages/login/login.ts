@@ -9,6 +9,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 
+import { ToastService } from '../../services/Toast/toast.service';
+
 @Component({
   selector: 'app-login',
   imports: [FormsModule, ReactiveFormsModule],
@@ -18,6 +20,7 @@ import {
 export class Login {
   private router = inject(Router);
   private service = inject(AuthService);
+  private toast = inject(ToastService);
 
   loginSuceful: boolean = true;
 
@@ -43,13 +46,14 @@ export class Login {
       next: (response) => {
         if (response.access_token) {
           this.service.storeSession(response);
-          alert('login realizado com sucesso');
+          // alert('login realizado com sucesso');
+          this.toast.mostrarSucesso('DEU BOM PORRA' , )
           this.loginSuceful = true;
         }
       },
       error: (error) => {
         console.error('Erro no login:', error);
-        alert('Não foi possivel realizar o login');
+        this.toast.mostrarErro('mensagem funcional' , 'inferior-direito',5200)
         this.loginSuceful = false;
       },
     });

@@ -1,0 +1,16 @@
+@if (toast$ | async; as toast) {
+  <div
+    class="toast"
+    [ngClass]="[toast.type, toast.position]"
+    [style.--duracao]="toast.timeOut + 'ms'"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave(toast.timeOut)"
+  >
+    <span>{{ toast.message }}</span>
+    <div class="progress">
+      @if (!reiniciando) {
+        <div class="progress-bar"></div>
+      }
+    </div>
+  </div>
+}
