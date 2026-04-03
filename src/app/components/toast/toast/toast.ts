@@ -4,7 +4,7 @@ import { ToastService } from '../../../services/Toast/toast.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-toast',
+  selector: 'toastNotificatioComponent',
   imports: [AsyncPipe, NgClass],
   templateUrl: './toast.html',
   styleUrl: './toast.scss',
