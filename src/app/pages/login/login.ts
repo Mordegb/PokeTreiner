@@ -35,7 +35,7 @@ export class Login {
 
   LoginForm = new FormGroup({
     UserEmail: new FormControl('', [Validators.required, Validators.email]),
-    UserPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    UserPassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
   FazerLogin() {

@@ -10,6 +10,7 @@ import {
   ɵInternalFormsSharedModule,
 } from '@angular/forms';
 import { UserService } from '../../services/Register/user.service';
+import { ToastService } from '../../services/Toast/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -20,6 +21,7 @@ import { UserService } from '../../services/Register/user.service';
 export class Register {
   private router = inject(Router);
   private userService = inject(UserService);
+  private toast = inject(ToastService)
 
   RegisterForm = new FormGroup({
     UserName: new FormControl('', [
@@ -51,8 +53,8 @@ export class Register {
       next: (response) => {
         if (!response.error) {
           console.log('usuario criado, manda o dan conferir');
+          this.toast.mostrarSucesso('Conta criada!','superior-direito',3800)
           this.router.navigate(['/login'])
-          // notficação de coisa boa
         }
       },
       error: (error: HttpErrorResponse) => {
