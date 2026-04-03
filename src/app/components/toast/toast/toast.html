@@ -6,7 +6,21 @@
     (mouseleave)="onMouseLeave()"
     (click)="onClick()"
   >
-    <span>{{ toast.message }}</span>
+    <div class="toast-conteudo">
+      <span class="toast-icone">
+        @if (toast.type === 'sucesso') {
+          <img src="check.svg" />
+        }
+        @if (toast.type === 'erro') {
+          <img src="x.svg" />
+        }
+        @if (toast.type === 'alerta') {
+          <img src="alert-triangle.svg" />
+        }
+      </span>
+      <span class="toast__mensagem">{{ toast.message }}</span>
+    </div>
+
     <div class="progress">
       <div
         class="progress-bar"

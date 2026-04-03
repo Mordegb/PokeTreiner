@@ -46,6 +46,23 @@
   animation: shrink var(--duracao) linear forwards;
 }
 
+.toast-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-icone {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: #fff;
+  }
+}
+
 @keyframes slideEsquerda {
   from {
     transform: translateX(110%);
