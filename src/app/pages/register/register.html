@@ -24,7 +24,9 @@
           <img src="lock.svg" class="inputImg" />
         </div>
 
-        <button type="submit" class="bntTrue">Criar conta</button>
+        <button type="submit" [className]="RegisterForm.valid ? 'bntTrue' : 'bntFalse'">
+          Criar conta
+        </button>
       </form>
     </div>
     <div class="right-side">

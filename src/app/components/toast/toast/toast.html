@@ -1,0 +1,32 @@
+@if (toast$ | async; as toast) {
+  <div
+    class="toast"
+    [ngClass]="[toast.type, toast.position]"
+    (mouseenter)="onMouseEnter()"
+    (mouseleave)="onMouseLeave()"
+    (click)="onClick()"
+  >
+    <div class="toast-conteudo">
+      <span class="toast-icone">
+        @if (toast.type === 'sucesso') {
+          <img src="check.svg" />
+        }
+        @if (toast.type === 'erro') {
+          <img src="x.svg" />
+        }
+        @if (toast.type === 'alerta') {
+          <img src="alert-triangle.svg" />
+        }
+      </span>
+      <span class="toast__mensagem">{{ toast.message }}</span>
+    </div>
+
+    <div class="progress">
+      <div
+        class="progress-bar"
+        [style.--duracao]="toast.timeOut + 'ms'"
+        [style.animation-play-state]="pausado ? 'paused' : 'running'"
+      ></div>
+    </div>
+  </div>
+}

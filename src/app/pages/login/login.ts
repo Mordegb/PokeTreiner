@@ -8,6 +8,8 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { ToastService } from '../../services/Toast/toast.service';
+
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ import {
 export class Login {
   private router = inject(Router);
   private service = inject(AuthService);
+  private toast = inject(ToastService);
 
   loginSuceful: boolean = true;
 
@@ -32,7 +35,7 @@ export class Login {
 
   LoginForm = new FormGroup({
     UserEmail: new FormControl('', [Validators.required, Validators.email]),
-    UserPassword: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    UserPassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
   FazerLogin() {
@@ -43,13 +46,13 @@ export class Login {
       next: (response) => {
         if (response.access_token) {
           this.service.storeSession(response);
-          alert('login realizado com sucesso');
+          this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 3500);
           this.loginSuceful = true;
         }
       },
       error: (error) => {
         console.error('Erro no login:', error);
-        alert('Não foi possivel realizar o login');
+        this.toast.mostrarErro('não foi possivel efetuar o login', 'inferior-direito', 3500);
         this.loginSuceful = false;
       },
     });
