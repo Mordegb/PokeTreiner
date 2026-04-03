@@ -46,7 +46,7 @@ export class Login {
       next: (response) => {
         if (response.access_token) {
           this.service.storeSession(response);
-          this.toast.mostrarSucesso('deu bom.', 'superior-direito', 3500);
+          this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 3500);
           this.loginSuceful = true;
         }
       },
