@@ -21,17 +21,14 @@ export class Login {
   private router = inject(Router);
   private service = inject(AuthService);
   private toast = inject(ToastService);
-
   loginSuceful: boolean = true;
+
 
   HowIsThatPokemon() {
     window.open('https://www.youtube.com/watch?v=WSGV_n6H1n0', '_blank');
   }
 
-  InputPassword: String = 'password';
-  ShowPassword() {
-    this.InputPassword = this.InputPassword === 'password' ? 'text' : 'password';
-  }
+
 
   LoginForm = new FormGroup({
     UserEmail: new FormControl('', [Validators.required, Validators.email]),
@@ -39,8 +36,8 @@ export class Login {
   });
 
   FazerLogin() {
-    const EmailDigitado = this.LoginForm.value.UserEmail ?? '';
-    const SenhaDigitada = this.LoginForm.value.UserPassword ?? '';
+    const EmailDigitado:string = this.LoginForm.value.UserEmail ?? '';
+    const SenhaDigitada:string = this.LoginForm.value.UserPassword ?? '';
 
     this.service.login(EmailDigitado, SenhaDigitada).subscribe({
       next: (response) => {
@@ -57,6 +54,13 @@ export class Login {
       },
     });
   }
+  
+
+    InputPassword: String = 'password';
+  ShowPassword() {
+    this.InputPassword = this.InputPassword === 'password' ? 'text' : 'password';
+  }
+
 
   limparErro() {
     if (!this.loginSuceful) {

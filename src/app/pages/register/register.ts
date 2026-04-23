@@ -38,15 +38,16 @@ export class Register {
   });
 
   CriarConta() {
-    const email = this.RegisterForm.value.UserEmail ?? '';
-    const senha = this.RegisterForm.value.UserPassword ?? '';
-    const name = this.RegisterForm.value.UserName ?? '';
+    const email: string = this.RegisterForm.value.UserEmail ?? '';
+    const senha: string = this.RegisterForm.value.UserPassword ?? '';
+    const name: string = this.RegisterForm.value.UserName ?? '';
 
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const emailValido: boolean = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     if (!emailValido) {
       this.toast.mostrarAlerta('Este não é um email válido.', 'inferior-direito', 3500);
       return;
     }
+
 
     this.userService.CriarConta(name, email, senha).subscribe({
       next: (response) => {
