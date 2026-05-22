@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
 import {
   FormsModule,
@@ -29,15 +29,14 @@ export class Login {
   }
 
 
-
   LoginForm = new FormGroup({
     UserEmail: new FormControl('', [Validators.required, Validators.email]),
     UserPassword: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
   FazerLogin() {
-    const EmailDigitado:string = this.LoginForm.value.UserEmail ?? '';
-    const SenhaDigitada:string = this.LoginForm.value.UserPassword ?? '';
+    const EmailDigitado = this.LoginForm.value.UserEmail ?? '';
+    const SenhaDigitada = this.LoginForm.value.UserPassword ?? '';
 
     this.service.login(EmailDigitado, SenhaDigitada).subscribe({
       next: (response) => {

@@ -29,7 +29,7 @@ export class AuthService {
   private router = inject(Router);
 
   login(email: string, password: string): Observable<ApiResponse> {
-    const body = new HttpParams() //isso aq não tranorma os parametro em json
+     const body = new HttpParams() //isso aq não transforma os parametro em json
       .set('username', email)
       .set('password', password)
       .set('grant_type', 'password');
@@ -38,7 +38,7 @@ export class AuthService {
       .post<ApiResponse>(`${environment.api}/auth/login/`, body, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          Accept: 'application/json',
+          'Accept': 'application/json',
         },
       })
       .pipe(
