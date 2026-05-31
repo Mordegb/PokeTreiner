@@ -13,15 +13,27 @@
   display: flex;
   justify-content: center;
   color: #242424;
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .segredo {
-    display: block;
-    transform: translateX(-123px);
-    cursor: pointer;
+
+  .login-img-wrapper {
+    position: relative;  
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+    }
+
+    .segredo {
+      position: absolute;
+      top: 18%;     
+      right: 27%;   
+      cursor: pointer;
+      padding: 15px;
+      z-index: 10;
+      color: #fff;
+    }
   }
 }
 

@@ -6,8 +6,10 @@
     <div class="rigth-side">
       <form [formGroup]="LoginForm" (ngSubmit)="FazerLogin()">
         <div class="login">
-          <img src="PokeLogin.png" />
-          <h2 (click)="HowIsThatPokemon()" class="segredo">O</h2>
+          <div class="login-img-wrapper">
+            <img src="PokeLogin.png" />
+            <h4 (click)="HowIsThatPokemon()" class="segredo">O</h4>
+          </div>
         </div>
         <div [className]="loginSuceful ? 'InputTrue' : 'InputFalse'">
           <input type="email" placeholder=" " formControlName="UserEmail" (input)="limparErro()" />
