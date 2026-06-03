@@ -15,7 +15,7 @@
   color: #242424;
 
   .login-img-wrapper {
-    position: relative;  
+    position: relative;
     display: inline-block;
 
     img {
@@ -27,12 +27,12 @@
 
     .segredo {
       position: absolute;
-      top: 18%;     
-      right: 27%;   
+      top: -4%;
+      right: 27%;
       cursor: pointer;
       padding: 15px;
       z-index: 10;
-      color: #fff;
+      color:transparent;
     }
   }
 }
