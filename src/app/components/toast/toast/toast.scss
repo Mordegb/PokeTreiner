@@ -1,0 +1,84 @@
+.toast {
+  position: fixed;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 3px;
+  font-size: 19px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  z-index: 9999;
+
+  &.erro {
+    background: #e53935;
+  }
+  &.sucesso {
+    background: #43a047;
+  }
+  &.alerta {
+    background: #f9a825;
+  }
+
+  &.superior-direito {
+    top: 20px;
+    right: 20px;
+    animation: slideEsquerda 0.3s ease-in-out;
+  }
+  &.inferior-direito {
+    bottom: 20px;
+    right: 20px;
+    animation: slideEsquerda 0.3s ease-in-out;
+  }
+}
+
+.progress {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+.progress-bar {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  animation: shrink var(--duracao) linear forwards;
+}
+
+.toast-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toast-icone {
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: #fff;
+  }
+}
+
+@keyframes slideEsquerda {
+  from {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

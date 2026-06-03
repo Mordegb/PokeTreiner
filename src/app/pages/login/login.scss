@@ -13,15 +13,27 @@
   display: flex;
   justify-content: center;
   color: #242424;
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  .segredo {
-    display: block;
-    transform: translateX(-123px);
-    cursor: pointer;
+
+  .login-img-wrapper {
+    position: relative;
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+    }
+
+    .segredo {
+      position: absolute;
+      top: -4%;
+      right: 27%;
+      cursor: pointer;
+      padding: 15px;
+      z-index: 10;
+      color:transparent;
+    }
   }
 }
 
@@ -172,12 +184,12 @@ form {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: none;
-  cursor: pointer;
   font-size: 18px;
   color: #fff;
   font-weight: 500;
   margin: 30px auto;
   opacity: 0.4;
+  cursor: default;
 }
 
 .forgot-link {
@@ -201,5 +213,6 @@ form {
   }
   input {
     transform: scale(1.6);
+    // accent-color: #0232de; muda a cor do check em baixa do input
   }
 }
