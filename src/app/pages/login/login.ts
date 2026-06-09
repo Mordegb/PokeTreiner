@@ -55,7 +55,7 @@ export class Login {
   }
   
 
-    InputPassword: String = 'password';
+  InputPassword: String = 'password';
   ShowPassword() {
     this.InputPassword = this.InputPassword === 'password' ? 'text' : 'password';
   }
