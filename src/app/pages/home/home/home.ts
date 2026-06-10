@@ -13,7 +13,6 @@ import { Signal } from '@angular/core';
 
 export class Home implements OnInit {
   private userService = inject(UserService);
-  private authService = inject(AuthService);
   
   users = signal<user[]>([]);
 

@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
   ɵInternalFormsSharedModule,
 } from '@angular/forms';
-import { UserService } from '../../services/Register/user.service';
+import { RegisterService } from '../../services/Register/register.service';
 import { ToastService } from '../../services/Toast/toast.service';
 
 @Component({
@@ -20,7 +20,7 @@ import { ToastService } from '../../services/Toast/toast.service';
 })
 export class Register {
   private router = inject(Router);
-  private userService = inject(UserService);
+  private userService = inject(RegisterService);
   private toast = inject(ToastService);
 
   RegisterForm = new FormGroup({

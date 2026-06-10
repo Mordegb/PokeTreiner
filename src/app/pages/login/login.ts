@@ -39,7 +39,7 @@ export class Login {
       next: (response) => {
         if (response.access_token) {
           this.authService.storeSession(response);
-          // this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 1500);
+          this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 1500);
           this.loginSuceful = true;
           this.router.navigate(['/home']);
         }

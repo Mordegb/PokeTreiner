@@ -32,7 +32,7 @@ export interface UserResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {  // ✅ nome diferente da interface
+export class UserService { 
   private http = inject(HttpClient);
 
   getAllUsers(page: number = 1, rowsPerPage: number = 10): Observable<UserResponse> {

@@ -18,7 +18,7 @@ export interface ApiResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class RegisterService {
   private _http = inject(HttpClient);
 
   CriarConta(name: string, email: string, password: string): Observable<ApiResponse> {
