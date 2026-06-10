@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService} from '../../services/auth/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import {
   FormsModule,
   FormControl,
@@ -10,7 +10,6 @@ import {
 } from '@angular/forms';
 import { ToastService } from '../../services/Toast/toast.service';
 
-
 @Component({
   selector: 'app-login',
   imports: [FormsModule, ReactiveFormsModule],
@@ -19,15 +18,13 @@ import { ToastService } from '../../services/Toast/toast.service';
 })
 export class Login {
   private router = inject(Router);
-  private service = inject(AuthService);
+  private authService = inject(AuthService);
   private toast = inject(ToastService);
   loginSuceful: boolean = true;
-
 
   HowIsThatPokemon() {
     window.open('https://www.youtube.com/watch?v=WSGV_n6H1n0', '_blank');
   }
-
 
   LoginForm = new FormGroup({
     UserEmail: new FormControl('', [Validators.required, Validators.email]),
@@ -38,28 +35,28 @@ export class Login {
     const EmailDigitado = this.LoginForm.value.UserEmail ?? '';
     const SenhaDigitada = this.LoginForm.value.UserPassword ?? '';
 
-    this.service.login(EmailDigitado, SenhaDigitada).subscribe({
+    this.authService.login(EmailDigitado, SenhaDigitada).subscribe({
       next: (response) => {
         if (response.access_token) {
-          this.service.storeSession(response);
-          this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 3500);
+          this.authService.storeSession(response);
+          // this.toast.mostrarSucesso('Login realizado.', 'superior-direito', 1500);
           this.loginSuceful = true;
+          this.router.navigate(['/home']);
         }
       },
       error: (error) => {
         console.error('Erro no login:', error);
         this.toast.mostrarErro('não foi possivel efetuar o login', 'inferior-direito', 3500);
         this.loginSuceful = false;
+        this.authService;
       },
     });
   }
-  
 
   InputPassword: String = 'password';
   ShowPassword() {
     this.InputPassword = this.InputPassword === 'password' ? 'text' : 'password';
   }
-
 
   limparErro() {
     if (!this.loginSuceful) {
