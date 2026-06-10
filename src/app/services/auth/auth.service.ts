@@ -61,7 +61,6 @@ export class AuthService {
     const refreshToken = sessionStorage.getItem('refresh_token');
     if (!refreshToken) {
       this.clearSessionStorage();
-      this.router.navigate(['/login']);
       return throwError(() => new Error('refresh token não encontreado'));
     }
     const params = new HttpParams().set('refresh_token', refreshToken);
